@@ -5,16 +5,19 @@ import numpy as np
 import time
 class Defencer:
     def __init__(self, HP, DEF, evd=0):
+        #hp血量, DEF防御,evd闪避
         self.hp = HP
         self.HP_rest = HP
         self.defence = DEF
         self.evd = evd
 
     def set_attacker(self, damage, attack_dur, hits=1):
+        #damage攻击力，attack_dur攻击间隔
         self.damage = damage
         self.attack_dur = attack_dur
         self.hits = hits
     def set_healer(self, recovery, heal_dur=2.85):
+        #recovery回复量， heal_dur回复间隔
         self.recovery = recovery
         self.heal_dur = heal_dur
 
