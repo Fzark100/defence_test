@@ -26,12 +26,14 @@ def defence_test1(defencer, attacker, healer, t_max = 30, test_times=1, delta_ti
 
 if __name__ == '__main__':
     verbose = False #是否显示战斗日志，当大规模测试时建议设置成False
-    Croissant = Croissant(HP=3670, DEF=796*1.7, miss=23*2, verbose=verbose)
+    Croissant = Croissant(HP=3670, DEF=1353, miss=46, verbose=verbose)
+    Hoshiguma = Hoshiguma(HP=3850, DEF=1610, miss=28)
+    Nian = Nian(HP=4919, DEF=1900)
     enemy1 = Attacker('斧头', 3780, 3.5)
-    healer1 = Attacker("满潜赫默7级一技能", -581*1.7, 2.85/1.14)
+    healer1 = Attacker("满潜赫默7级一技能", -581*1.7, 2.85/1.14)#hps395
     times = 10000
-    skill_dur = 30
-    time_accum = defence_test1(Croissant, enemy1, healer1, t_max=30, test_times=times, verbose=verbose)
+    skill_dur = 30#记得修改技能持续时间
+    time_accum = defence_test1(Croissant, enemy1, healer1, t_max=skill_dur, test_times=times, verbose=verbose)
 
     print(sum(time_accum)/times)
     x = range(skill_dur+1)
