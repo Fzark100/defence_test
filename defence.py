@@ -10,6 +10,8 @@ def defence_test1(defencer, attacker, healer, t_max = 30, test_times=1, delta_ti
     for i in range(times):
         t = 0
         if verbose: print('*' * 20, '第', i + 1, '次尝试', '*' * 20)
+        attacker.refresh()
+        healer1.refresh()
         while t < t_max:
             attacker.cool_dowm(t_delta)
             healer.cool_dowm(t_delta)
