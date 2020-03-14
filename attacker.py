@@ -24,4 +24,5 @@ class Attacker:#进攻和治疗
         self.timer = self.timer - time
     def attackable(self):
         return self.timer<=0
-
+    def refresh(self):#重置攻击
+        self.timer = self.atk_dur
